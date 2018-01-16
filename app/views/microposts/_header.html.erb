@@ -7,12 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+      <%= link_to 'Home', root_path, class: "navbar-brand" %>
     </div>
     <div id="gnavi" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'つぶやき一覧', microposts_path %></a></li>
-        <li><%= link_to '新規投稿', new_micropost_path %></a></li>
+        <li><%= link_to 'つぶやき一覧', microposts_path %></li>
+        <li><%= link_to '新規投稿', new_micropost_path %></li>
       </ul>
     </div>
   </div>
