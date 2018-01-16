@@ -1,0 +1,13 @@
+<h3>以下の内容で投稿します</h3>
+
+<%= form_with(model: @micropost, url: microposts_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  
+  <p>内容:<%= @micropost.content  %></p>
+  <%= form.submit "投稿する" %>
+<% end %>
+
+<%= form_with(model: @micropost, url: new_micropost_path, local: true, method: :get) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
