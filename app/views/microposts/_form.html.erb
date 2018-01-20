@@ -11,8 +11,8 @@
   <% end %>
   
   <div class="micropost_title">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :content, value: "140字まで" %>
+    <%= form.text_area :content, class: "form-control", rows: "3" %>
   </div>
   <%= form.submit "投稿する", class: "btn btn-primary" %>
 <% end %>
