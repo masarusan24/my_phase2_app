@@ -2,15 +2,12 @@
 <h1>つぶやき一覧</h1>
 <%= notice %>
 <table>
-  <tr>
-    <th>tweet</th>
-  </tr>
 <% @microposts.each do |micropost| %>
   <tr>
     <td><%= micropost[:content] %></td>
-    <td><%= link_to '詳細画面へ', micropost_path(micropost.id) %></td>
-    <td><%= link_to '編集画面へ', edit_micropost_path(micropost.id) %></td>
-    <td><%= link_to '削除する', micropost_path(micropost.id), method: :delete, data: { confirm: "削除しますか？" } %></td>
+    <!--<td><%= link_to '詳細画面へ', micropost_path(micropost.id) %></td>-->
+    <td><%= link_to '編集画面へ', edit_micropost_path(micropost.id), class: "btn btn-primary" %></td>
+    <td><%= link_to '削除する', micropost_path(micropost.id), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-warning" %></td>
   </tr>
 <% end %>
 </table>
