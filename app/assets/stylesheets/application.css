@@ -15,11 +15,11 @@
  *= require_self
  */
 
-/*html {*/
-/*  height: 100%;*/
-/*  font-size: 62.5%;*/
-/*  font-family: serif;*/
-/*}*/
+html {
+  /*height: 100%;*/
+  font-size: 62.5%;
+  font-family: serif;
+}
 
 /*body {*/
 /*  height: 100%;*/
@@ -35,16 +35,36 @@
 .header {
   /*background-color: #53727d;*/
   background-color: #5a544b;
-  height: 50px;
+  color: #fff;
+  height: 60px;
   font-size: 1.8rem;
-  /*display: table;*/
+  display: table;
 }
 
 .header p {
   color: #fff;
   float: left;
-  /*vertical-align: middle;*/
-  /*display: table-cell;*/
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.key_visual {
+  position: relative;
+}
+
+.key_visual p {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 8rem;
+  font-family: cursive,serif;
 }
 
 .bg-info {
@@ -61,6 +81,28 @@
 /*  vertical-align: middle;*/
 /*  display: table-cell;*/
 /*}*/
+
+.preamble {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.about {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.preamble h1 {
+  border-bottom:solid 3px;
+  border-bottom-color: #2c4f54;
+}
+
+.about h2 {
+  /*margin-bottom: 2px;*/
+  border-bottom:solid 3px;
+  border-bottom-color: #2c4f54;
+  border-bottom-width: thin;
+}
 
 .table .content {
   display: block;
