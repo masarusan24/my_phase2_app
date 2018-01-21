@@ -1,5 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+  NOTICE_MSG = { create: "つぶやきました", edit: "つぶやきを更新しました", destroy: "つぶやきを削除しました" } 
+
   def new
     if params[:back]
       @micropost = Micropost.new(micropost_params)
@@ -11,7 +13,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = Micropost.new(micropost_params)
     if @micropost.save
-      redirect_to root_path, notice: "ツイートしました。"
+      redirect_to microposts_path, notice: NOTICE_MSG[:create]
     else
       render 'new'
     end
@@ -26,7 +28,7 @@ class MicropostsController < ApplicationController
   
   def update
     if @micropost.update(micropost_params)
-      redirect_to root_path, notice: "ツイートを更新しました"
+      redirect_to microposts_path, notice: NOTICE_MSG[:edit]
     else
       render 'edit'
     end
@@ -34,7 +36,7 @@ class MicropostsController < ApplicationController
   
   def destroy
     @micropost.destroy
-    redirect_to root_path, notice: "ツイートを削除しました"
+    redirect_to microposts_path, notice: NOTICE_MSG[:destroy]
   end
 
   def show

@@ -1,22 +1,23 @@
 <%= render 'header' %>
-<h3>以下の内容で投稿します</h3>
-
-<%= form_with(model: @micropost, url: microposts_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p>内容:<%= @micropost.content  %></p>
+<div class="wrapper clearfix">
   <div class="row">
-    <div class="col-xs-1">
-      <%= form.submit "投稿する", class: "btn btn-primary btn btn-block" %>
+    <div class="col-md-6 col-md-offset-3">
+      <h1>以下の内容で投稿します</h3>
+      <%= form_with(model: @micropost, url: microposts_path, local: true) do |form| %>
+        <%= form.hidden_field :content %>
+        <p><%= @micropost.content  %></p>
     </div>
   </div>
-<% end %>
-
-<%= form_with(model: @micropost, url: new_micropost_path, local: true, method: :get) do |form| %>
-  <%= form.hidden_field :content %>
   <div class="row">
-    <div class="col-xs-1">
-      <%= form.submit "戻る", name: 'back', class: "btn btn-default btn btn-block" %>
+    <div class="col-md-1 col-md-offset-3">
+        <%= form.submit "投稿する", class: "btn btn-primary btn btn-block" %>
+      <% end %>
+      
+      <%= form_with(model: @micropost, url: new_micropost_path, local: true, method: :get) do |form| %>
+        <%= form.hidden_field :content %>
+        <%= form.submit "戻る", name: 'back', class: "btn btn-default btn btn-block" %>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
 <%= render 'footer' %>
